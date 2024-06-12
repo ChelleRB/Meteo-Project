@@ -3,37 +3,47 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
     <title>Meteo App</title>
   </head>
   <body>
-    <header>
-      <form>
-        <input type="search" placeholder="Enter a city.." required />
-        <input type="submit" value="Search" />
-      </form>
-    </header>
-    <main>
-      <div>
-        <h1>London</h1>
-        <p>
-          Wednesday 14:44, Mostly Cloudly
-          <br />
-          Humidity: 66%, Wind 3.313km/h
-        </p>
-      </div>
-      <div>🌤️ 12&deg;C</div>
-    </main>
-    <footer>
-      This project was coded by
-      <a href="https://github.com/ChelleRB?tab=repositories"
-        >Rochelle Anderson</a
-      >, also on
-      <a href="https://www.linkedin.com/in/rochelle-anderson-a740b214a/">
-        Linkedin</a
-      >, with these
-      <a href="https://www.shecodes.io/graduates/120480-rochelle-anderson"
-        >Certificates</a
-      >
-    </footer>
+    <div class="weather-app">
+      <!--this part makes the form with the white backrgound-->
+      <header>
+        <form>
+          <input type="search" placeholder="Enter a city.." required />
+          <input type="submit" value="Search" />
+        </form>
+      </header>
+      <main>
+        <div>
+          <h1>London</h1>
+          <p>
+            Wednesday 14:44, Mostly Cloudly
+            <br />
+            Humidity: 66%, Wind 3.313km/h
+          </p>
+        </div>
+        <div>🌤️ 12&deg;C</div>
+      </main>
+      <footer>
+        This project was coded by
+        <a href="https://github.com/ChelleRB?tab=repositories"
+          >Rochelle Anderson</a
+        >, also on
+        <a href="https://www.linkedin.com/in/rochelle-anderson-a740b214a/">
+          Linkedin</a
+        >, with these
+        <a href="https://www.shecodes.io/graduates/120480-rochelle-anderson"
+          >Certificates</a
+        >
+      </footer>
+    </div>
   </body>
 </html>
