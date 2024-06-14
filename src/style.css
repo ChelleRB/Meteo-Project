@@ -61,6 +61,7 @@ main {
 }
 .weather-app-temperature-container {
   display: flex;
+  font-size: 40px;
 }
 
 .weather-app-temperature {
@@ -68,13 +69,13 @@ main {
   font-weight: bold;
 }
 .weather-app-icon {
-  font-size: 44px;
-  margin-top: 22px;
+  font-size: 60px;
+  margin-top: 12px;
   font-weight: bold;
 }
 .weather-app-unit {
   margin-top: 16px;
-  font-size: 28px;
+  font-size: 25px;
 }
 footer {
   border-bottom: 2px solid plum;
