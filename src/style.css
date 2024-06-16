@@ -13,7 +13,7 @@ a {
   color: cadetblue;
 }
 .weather-app {
-  background-color: white;
+  background-color: whitesmoke;
   max-width: 600px;
   margin: 45px auto;
   padding: 30px;
@@ -90,27 +90,29 @@ main {
   display: flex;
   justify-content: space-between;
   margin-top: 30px;
+  flex-direction: row;
 }
 
 .forecast-date {
   text-align: center;
-  color: green;
+  color: darkblue;
   font-size: 17px;
   line-height: 18px;
   margin-bottom: 8px;
-  font-weight: 350;
+  font-weight: 500;
 }
 
 .weather-forecast-icon {
   font-size: 48px;
   text-align: center;
+  width: 80px;
 }
 .weather-forecast-temperatures {
   text-align: center;
   color: #f65282;
   margin-top: 10px;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
 .forecast-temperature {

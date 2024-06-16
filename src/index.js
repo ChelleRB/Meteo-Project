@@ -24,13 +24,13 @@ function formatDate(date) {
   let minutes = date.getMinutes();
   let hours = date.getHours();
   let days = [
-    "Sunday",
     "Monday",
     "Tuesday",
     "Wednesday",
     "Thursday",
     "Friday",
     "Saturday",
+    "Sunday",
   ];
   let day = days[date.getDay()];
 
@@ -55,11 +55,15 @@ function handleSearchSubmit(event) {
 
   searchCity(searchInput.value);
 }
-
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 
-searchCity("London");
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+
+  return days[date.getDay()];
+}
 
 //below is api link between cities and weather forecast icon
 function getForecast(city) {
@@ -69,30 +73,33 @@ function getForecast(city) {
 }
 ///
 //below is the JS template
-function displayForecast() {
-  let days = ["Mon", "Tues", "Wed", "Thurs", "Fri", "Sat", "Sun"];
-
+function displayForecast(response) {
   let forecastHtml = "";
 
-  days.forEach(function (day) {
-    forecastHtml =
-      forecastHtml +
-      `
+  response.data.daily.forEach(function (day, index) {
+    if (index < 5) {
+      forecastHtml =
+        forecastHtml +
+        `
       <div class="weather-forecast-day">
-        <div class="weather-forecast-date">${day}</div>
-        <div class="weather-forecast-icon">🌤️</div>
+        <div class="forecast-date">${formatDay(day.time)}</div>
+
+        <img src="${day.condition.icon_url}" class="weather-forecast-icon" />
         <div class="weather-forecast-temperatures">
           <div class="weather-forecast-temperature">
-            <strong>15º</strong>
+            <strong>${Math.round(day.temperature.maximum)}º</strong>
           </div>
-          <div class="forecast-temperature">9º</div>
+          <div class="weather-forecast-temperature">${Math.round(
+            day.temperature.minimum
+          )}º</div>
         </div>
       </div>
     `;
+    }
   });
   //we can always copy and paste many times but that would be hard to judge
   let forecastElement = document.querySelector("#forecast");
   forecastElement.innerHTML = forecastHtml;
 }
 
-displayForecast(); //this will be replaced everytime thats why we need a loop for all the different days of the week and its important we make an array
+searchCity("London"); //this will be replaced everytime thats why we need a loop for all the different days of the week and its important we make an array
